@@ -169,7 +169,7 @@
 document.getElementById("submit").addEventListener("click", function (event) {
         event.preventDefault();
 
-        var newFriend = {
+        var userInput = {
 	        "name": document.getElementById('name').value.trim(),
 	        "photo": document.getElementById('photo').value.trim(),
             scores: [
@@ -186,10 +186,10 @@ document.getElementById("submit").addEventListener("click", function (event) {
                 ]
             };
 
-        axios.post("/api/friends", newFriend, function (bestFriend) {
+        axios.post("/api/friends", userInput, function (userFriend) {
                 if (bestFriend){
-                    document.getElementById('friend-name').text(bestFriend.name)
-                    document.getElementById('friend-image').attribute('src', bestFriend.photo)
+                    document.getElementById('friend-name').text(userFriend.name)
+                    document.getElementById('friend-image').attribute('src', userFriend.photo)
                     document.getElementsById("myModal").modal("show");
                 
                 }
