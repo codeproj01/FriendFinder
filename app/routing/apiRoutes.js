@@ -34,7 +34,4 @@ module.exports = function (app) {
 
     });
 
-
-
 }
-// function to find the index of the smallest element from an array
