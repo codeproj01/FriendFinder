@@ -144,7 +144,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title">A Friend Match!</h5>
+                  <h3 class="modal-title">A Friend Match!</h3>
                   <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">
                       &times;
@@ -152,11 +152,11 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p id = "friend-name"></p>
-                  <img id = "friend-image" />
+                  <p id = "nameOFfriend"></p>
+                  <img id = "imgfriend" />
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Exit</button>
                 </div>
               </div>
             </div>
@@ -188,8 +188,8 @@ document.getElementById("submit").addEventListener("click", function (event) {
 
         axios.post("/api/friends", userInput, function (userFriend) {
                 if (userFriend){
-                    document.getElementById('friend-name').text(userFriend.name)
-                    document.getElementById('friend-image').attribute('src', userFriend.photo)
+                    document.getElementById('nameOFfriend').text(userFriend.name)
+                    document.getElementById('imgfriend').attribute('src', userFriend.photo)
                     document.getElementsById("myModal").modal("show");
                 
                 }
